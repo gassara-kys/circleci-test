@@ -11,8 +11,8 @@ jobs:
       - run:
           name: set assume role credential 
           command: |
+            mkdir -p ~/.aws
             bash scripts/assume.sh
-            source aws_sts_env.sh
       - run:
           name: test s3 command
           command: aws s3 ls --profile CircleciProfile
