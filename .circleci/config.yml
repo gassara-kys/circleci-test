@@ -15,7 +15,9 @@ jobs:
             . aws_sts_env.sh
       - run:
           name: test s3 command
-          command: aws s3 ls
+          command: |
+            . aws_sts_env.sh
+            aws s3 ls
       - run:
           name: display CodeCommit README
           command: |
