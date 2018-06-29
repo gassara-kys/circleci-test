@@ -10,3 +10,9 @@ jobs:
           command: |
           chmod +x scripts/assume.sh
           source scripts/aws-cli-assumerole.sh
+
+workflows:
+  version: 2
+  build_and_build:
+    jobs:
+      - build
