@@ -11,6 +11,7 @@ aws_sts_credentials="$(aws sts assume-role \
   --output "json")"
 
 mkdir -p ~/.aws/
+touch ~/.aws/credentials
 cat <<EOT > "~/.aws/credentials"
 [CircleciProfile]
 AWS_ACCESS_KEY_ID="$(echo $aws_sts_credentials | jq -r '.AccessKeyId')"
