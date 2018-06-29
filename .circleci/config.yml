@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: smarthr/circleci-base
+      - image: circleci/node:8.10
     steps:
       - checkout
       - run:
