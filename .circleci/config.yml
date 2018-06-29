@@ -12,7 +12,7 @@ jobs:
           name: set assume role credential 
           command: |
             bash scripts/assume.sh
-            source aws_sts_env.sh
+            . aws_sts_env.sh
       - run:
           name: test s3 command
           command: aws s3 ls
