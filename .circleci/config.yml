@@ -2,10 +2,13 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cibuilds/aws:latest
+      - image: circleci/node:8.10
     steps:
       - checkout
       - run:
-        name: assume role credential set
+        name: dependencies
+        command: sudo apt-get install awscli
+      - run:
+        name: set assume role credential 
         command: source scripts/assume.sh
 
