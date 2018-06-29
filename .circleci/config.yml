@@ -7,12 +7,5 @@ jobs:
       - checkout
       - run:
         name: assume role credential set
-        command: |
-        chmod +x scripts/assume.sh
-        source scripts/assume.sh
+        command: source scripts/assume.sh
 
-workflows:
-  version: 2
-  build_and_build:
-    jobs:
-      - build
