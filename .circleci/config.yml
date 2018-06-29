@@ -6,10 +6,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: assume role credential set
-          command: |
-          chmod +x scripts/assume.sh
-          source scripts/aws-cli-assumerole.sh
+        name: assume role credential set
+        command: |
+        chmod +x scripts/assume.sh
+        source scripts/assume.sh
 
 workflows:
   version: 2
