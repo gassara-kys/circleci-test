@@ -21,6 +21,7 @@ jobs:
       - run:
           name: display CodeCommit README
           command: |
+            . aws_sts_env.sh
             git config --global credential.helper '!aws --profile CircleciProfile codecommit credential-helper $@'
             git config --global credential.UseHttpPath true
             git clone https://git-codecommit.ap-northeast-1.amazonaws.com/v1/repos/circleci-test
