@@ -6,9 +6,9 @@ jobs:
     steps:
       - checkout
       - run:
-        name: dependencies
-        command: sudo apt-get install awscli
+          name: dependencies
+          command: sudo apt-get install awscli
       - run:
-        name: set assume role credential 
-        command: source scripts/assume.sh
+          name: set assume role credential 
+          command: source scripts/assume.sh
 
