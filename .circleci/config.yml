@@ -12,6 +12,7 @@ jobs:
           name: set assume role credential 
           command: |
             mkdir -p ~/.aws
+            touch ~/.aws/credentials
             bash scripts/assume.sh
       - run:
           name: test s3 command
