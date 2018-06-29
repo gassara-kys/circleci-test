@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8.10
+      - image: smarthr/circleci-base
     steps:
       - checkout
       - run:
@@ -10,5 +10,7 @@ jobs:
           command: sudo apt-get install awscli
       - run:
           name: set assume role credential 
-          command: source scripts/assume.sh
+          command: |
+            bash scripts/assume.sh
+            source aws_sts_env.sh
 
