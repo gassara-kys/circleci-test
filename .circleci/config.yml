@@ -13,4 +13,14 @@ jobs:
           command: |
             bash scripts/assume.sh
             source aws_sts_env.sh
+      - run:
+          name: test s3 command
+          command: aws s3 ls --profile CircleciProfile
+      - run:
+          name: display CodeCommit README
+          command: |
+            git config --global credential.helper '!aws --profile CircleciProfile codecommit credential-helper $@'
+            git config --global credential.UseHttpPath true
+            git clone https://git-codecommit.ap-northeast-1.amazonaws.com/v1/repos/circleci-test
+            cat circleci-test/README.md
 
