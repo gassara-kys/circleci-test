@@ -10,10 +10,12 @@ jobs:
           command: sudo apt-get install awscli
       - run:
           name: set assume role credential 
-          command: bash scripts/assume.sh
+          command: |
+            bash scripts/assume.sh
+            source aws_sts_env.sh
       - run:
           name: test s3 command
-          command: aws s3 ls --profile CircleciProfile
+          command: aws s3 ls
       - run:
           name: display CodeCommit README
           command: |
